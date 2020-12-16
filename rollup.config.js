@@ -8,5 +8,11 @@ export default {
     dir: 'build',
     format: 'cjs',
   },
-  plugins: [typescript(), commonjs()],
+  plugins: [
+    typescript({
+      exclude: ['./src/__test__/**'],
+      sourceMap: true,
+    }),
+    commonjs(),
+  ],
 };
